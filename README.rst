@@ -1,3 +1,7 @@
+
+Implementation originally from git@github.com:cceh/suffix-tree.git.
+Added simple modifications for example purpose.
+
 ===========================
  A Generalized Suffix Tree
 ===========================
