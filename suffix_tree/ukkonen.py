@@ -170,6 +170,7 @@ class Builder (builder.Builder):
         act_path = Path (path.S, path.start, path.end - 1)
 
         oldr = self.root
+        oldrp = None
         is_end_point, r = self.test_and_split (s, act_path, t_i)
 
         while not is_end_point:
@@ -182,6 +183,9 @@ class Builder (builder.Builder):
             if oldr is not self.root:
                 oldr.suffix_link = r
             oldr = r
+            if oldrp is not None:
+                oldrp.suffix_link = r_prime
+            oldrp = r_prime
 
             assert s.is_internal (), 'Node "%s" is a leaf' % s
             assert s.suffix_link is not None, 'Node "%s" has no suffix link' % s
